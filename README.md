@@ -8,23 +8,23 @@
 Firstly i was trying with an rc mariadb version, but it was difficult i couldn't manage errors, so it works with with mariadb:10
 </p>
 
-General Purpouse
-On APP with laravelRun
-docker compose build
-docker-compose build
+<p>General Purpouse</p>
+<p>On APP with laravelRun</p>
+<p>docker compose build</p>
+<p>docker-compose build</p>
 
-curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-apt-get install unzip
-composer create-project laravel/laravel associates-departments-interprise
-chown -R www-data:www-data associates-departments-interprise
+<p>curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer</p>
+<p>apt-get install unzip</p>
+<p>composer create-project laravel/laravel associates-departments-interprise</p>
+<p>chown -R www-data:www-data associates-departments-interprise</p>
 
-When the project is created
-	apt-get update
-	apt-get install -y libpq-dev
-	docker-php-ext-install pdo_pgsql
+<p>When the project is created</p>
+	<p>apt-get update</p>
+	<p>apt-get install -y libpq-dev</p>
+	<p>docker-php-ext-install pdo_pgsql</p>
 
-Change DB_Port to 5432
-connect to psqldb
+<p>Change DB_Port to 5432
+<p>connect to psqldb</p>
 
 	psql -U tutorial_user
 	CREATE DATABASE tutorial_db
