@@ -1,0 +1,28 @@
+version: '3'
+services:
+  web:
+    image: nginx:1.25.3
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ./app:/app
+  php:
+    build:
+      context: .
+      dockerfile: PHP.Dockerfile
+    volumes:
+      - ./app:/app
+  mysql:
+    image: mariadb:10
+    environment:
+      MYSQL_ROOT_PASSWORD: 'secret_root'
+      MYSQL_USER: 'tutorial_user'
+      MYSQL_PASSWORD: 'secret_tutorial'
+      MYSQL_DATABASE: 'tutorial_db'
+    volumes:
+      - mysqldata:/var/lib/mysql
+    ports:
+      - 3306:3306
+volumes:
+  mysqldata: {}
